@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+
+/* ----------------------------- */
+/* A változók beállítása         */
+/* ----------------------------- */
+:root {
+    --color_glow_green: rgba(0, 197, 180, 0.8);
+    --color_glow_green_faded: rgba(0, 197, 180, 0.3);
+    --color_font: rgba(80,0,0, 0.8);
+    --color_active_red: rgba(255, 80, 80, 0.8);
+    --color_white: rgba(255, 255, 255);
+    --color_white_transparent: rgba(255, 255, 255, 0.5);
+}
+
+
+/* ----------------------------- */
+/* A RESET beállítása            */
+/* ----------------------------- */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    text-decoration: none;
+    list-style: none;
+}
+textarea, input {
+    border: 0;
+    outline: 0;
+}
+
+
+/* ----------------------------- */
+/* A HTML és alap beállítások    */
+/* ----------------------------- */
+* {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: var(--color_font);
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+body {
+    min-width: 300px;
+    background: var(--color_white)
+}
+
+
+/* ----------------------------- */
+/* A HEADER elemeinek beállítása */
+/* ----------------------------- */
+header {
+    grid-area: HEADER;
+    display: grid;
+    grid-template-areas:
+    "LOGO"
+    "SOCIAL";
+    justify-content: center;
+    align-content: center;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    min-width: 300px;
+    backdrop-filter: blur(3px);
+    z-index: 10;
+}
+header .codepilot-logo {
+    grid-area: LOGO;
+    padding: 0.5rem 2rem;
+}
+header .social_media {
+    grid-area: SOCIAL;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+}
+header .social_media .social_media_items {
+    height: 1.8rem;
+    border-radius: 5px;
+    transition: all 0.5s linear;
+}
+header .social_media .social_media_items:hover {
+    background-color: var(--color_glow_green);
+    box-shadow: 0 0 5px 5px var(--color_glow_green);
+}
+header .social_media .social_media_items img {
+    object-fit: cover;
+    height: 1.8rem;
+}
+
+
+/* ----------------------------- */
+/* A NAV elemeinek beállítása    */
+/* ----------------------------- */
+nav {
+    grid-area: NAV;
+    position: sticky;
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 66px;
+    padding: 0.5rem;
+    z-index: 8;
+}
+nav .toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    align-self: normal;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    background: transparent;
+    backdrop-filter: blur(3px);
+    border-radius: 5px;
+    transition: all 0.5s linear;
+    cursor: pointer;
+    z-index: 10;
+}
+nav .toggle .sr-only {
+    display: none;
+}
+nav .toggle.menu-active {
+    background-color: var(--color_glow_green);
+    box-shadow: 0 0 8px 2px var(--color_glow_green);
+}
+nav .toggle li {
+    list-style: none;
+    position: relative;
+    width: 80%;
+    height: 4px;
+    background: var(--color_font);
+    transition: all 0.8s linear;
+}
+nav .toggle.menu-active li:nth-of-type(1) {
+    transform: translateY(13.5px) rotate(45deg);
+}
+nav .toggle.menu-active li:nth-of-type(2) {
+    opacity: 0;
+}
+nav .toggle.menu-active li:nth-of-type(3) {
+    transform: translateY(-13.5px) rotate(-45deg);
+}
+nav .menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    translate: -110%;
+    list-style-type: none;
+    padding: 3px;
+    transition: 0.8s;
+    background: transparent;
+    backdrop-filter: blur(3px);
+    border-radius: 5px;
+    padding-top: 0.5rem;
+}
+nav .menu.menu-active {
+    translate: 0;
+}
+nav .menu li {
+    list-style: none;
+    position: relative;
+    width: 250px;
+    text-align: left;
+}
+nav .menu li a {
+    text-decoration: none;
+    display: block;
+}
+
+
+/* ----------------------------- */
+/* A MAIN elemeinek beállítása   */
+/* ----------------------------- */
+main {
+    grid-area: MAIN;
+}
+main section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    padding: 0.8rem;
+    overflow: clip;
+}
+main section h2 {
+    font-size: 1.3rem;
+    color: var(--color_glow_green);
+}
+main section h3 {
+    font-size: 1.1rem;
+}
+
+/* ----------------------------- */
+/* A HOME elemeinek beállítása   */
+/* ----------------------------- */
+.home {
+    height: 100vh;
+}
+.home h1 {
+    font-size: 1.6rem;
+}
+.home h2 {
+    margin-bottom: 2rem;
+}
+.home a {
+    position: relative;
+    font-size: 1.3rem;
+}
+.home a::before {
+    font-size: 0.8rem;
+    width: 100vw;
+}
+
+
+/* ----------------------------- */
+/* Az ABOUT elemeinek beállítása */
+/* ----------------------------- */
+.about {
+    height: 150vh;
+    gap: 0.8rem;
+}
+.about p {
+    font-size: 0.8rem;
+    width: 70vw;
+    padding: 0 2rem;
+}
+.about p a {
+    color: var(--color_glow_green);
+}
+.about .profil {
+    border-radius: 8px;
+    border: 8px double var(--color_font);
+}
+.about .profil img {
+    width: clamp(270px, 70vw, 700px);
+    object-fit: cover;
+}
+
+
+/* ----------------------------- */
+/* A SKILLS elemeinek beállítása */
+/* ----------------------------- */
+.skill {
+    height: 110vh;
+    gap: 1.1rem;
+}
+.skill h3 {
+    margin-bottom: 2rem;
+}
+
+
+/* -------------------------------- */
+/* A PORTFOLIO elemeinek beállítása */
+/* -------------------------------- */
+.portfolio {
+    gap: 1.1rem;
+}
+
+
+/* -------------------------------- */
+/* A CONTACT elemeinek beállítása   */
+/* -------------------------------- */
+.contact {
+    height: 110vh;
+    gap: 1.1rem;
+}
+.contact h3 {
+    margin-bottom: 1rem;
+}
+.contact form {
+    width: clamp(270px, 45vw, 800px);
+    text-align: center;
+}
+form .field input.form-item,
+form .field textarea.form-item {
+    width: 100%;
+    padding: 0.5rem;
+    background: transparent;
+    border: 2px solid var(--color_glow_green);
+    border-radius: 5px;
+    box-shadow: 0 0 8px 2px var(--color_glow_green);
+    font-family: inherit;
+    font-size: 0.8rem;
+    margin-top: 11px;
+}
+form .field .form-item::placeholder {
+    color: var(--color_font);
+}
+form .textarea-field .blank-txt {
+    margin-top: -1px;
+}
+form .textarea-field .form-item {
+    resize: none;
+}
+form .submit-button {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: var(--color_white);
+    font-size: 1.3rem;
+    font-family: inherit;
+    cursor: pointer;
+    margin: 20px 0;
+}
+form .submit-button::before {
+    font-size: 0.8rem;
+    width: 100vw;
+    text-align: left;
+}
+
+
+/* -------------------------------- */
+/* A Reszponzivitás beállítása      */
+/* -------------------------------- */
+@media screen and (min-width: 576px) {
+    header {
+        grid-template-areas:
+        "LOGO SOCIAL";
+    }
+    nav {
+        top: 80px;
+    }
+
+    .home h1 {
+        font-size: 2rem;
+    }
+    .home h2 {
+        font-size: 1.7rem;
+    }
+}
+@media screen and (min-width: 992px) {
+    body {
+        display: grid;
+        grid-template-columns: 270px auto;
+        grid-template-areas:
+        "HEADER HEADER"
+        "NAV MAIN";
+        align-items: start;
+    }
+    header {
+        justify-content: space-between;
+    }
+    header .social_media {
+        padding: 0.5rem 2rem;
+    }
+    nav .toggle {
+        display: none;
+    }
+    nav .menu {
+        position: sticky;
+        top: 80px;
+        translate: 0;
+    }
+    .portfolio .container {
+        flex-direction: row;
+    }
+}
