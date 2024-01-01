@@ -1,7 +1,7 @@
 .slideshow {
     position: relative;
-    width: clamp(270px, 80vw, 600px);
-    height: clamp(210px, 62vw, 450px);
+    width: clamp(270px, 55vw, 600px);
+    height: clamp(210px, 50vw, 450px);
     transform-style: preserve-3d;
     perspective: 1000px;
 }
