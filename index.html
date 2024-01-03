@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="./css/3d_slideshow_style.css">
     <link rel="stylesheet" href="./css/gradient_border_card_style.css">
     <link rel="stylesheet" href="./css/codepilot_logo_style.css">
-    <title>József Nógrádi Frontend Developer</title>
+    <title>József Nógrádi | Frontend Developer</title>
 </head>
 <body>
+    <span class="scroll-watcher"></span>
     <header class="base-element_design">
         <div class="codepilot-logo">
             <h2 data-text="CO[DE]PILOT">CO[DE]PILOT</h2>
@@ -144,20 +145,27 @@
         <section id="contact-ref" class="contact">
             <h2>Contact</h2>
             <h3>Feel free to send me a message</h3>
-            <form action="#">
+            <form action="https://formsubmit.co/f494569fbfc22ab7906f8f7703c27bf2" method="POST" class="contact-form">
+                <input type="hidden" name="_captcha" value="true"/>
+                <input type="hidden" name="_subject" value="Új Üzenet a CO[DE]PILOT-nak!!!"/>
+                <input type="hidden" name="_cc" value="piratosnogi@gmail.com"/>
                 <div class="input-box">
                     <div class="input-field field">
                         <input type="text" placeholder="Full name" id="name"
                             class="form-item" name="Full&nbsp;name" autocomplete="off"/>
+                        <div class="blank-txt">Please fill in the full name field!</div>
                     </div>
                     <div class="input-field field">
                         <input type="email" placeholder="Email-adress" id="email"
-                            class="form-item" name="Email-adress" autocomplete="off"/>
+                        class="form-item" name="Email-adress" autocomplete="off"/>
+                        <div class="blank-txt">Please fill in the email field!</div>
+                        <div class="error-txt">Please enter a valid email address!</div>
                     </div>
                 </div>
                 <div class="textarea-field field">
                     <textarea class="form-item" name="Message&nbsp;text" id="message" cols="30" rows="10"
-                        autocomplete="off" placeholder="Please enter your message here"></textarea>
+                    autocomplete="off" placeholder="Please enter your message here"></textarea>
+                    <div class="blank-txt">Please fill in the message field!</div>
                 </div>
                 <a class="submit-button letter_spacing_anim" href="#" data-text="Send Message">Send Message</a>
             </form>

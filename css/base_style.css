@@ -56,6 +56,22 @@ body {
     min-width: 300px;
     background: var(--color_white)
 }
+body .scroll-watcher {
+    grid-area: SCROLLER;
+    height: 8px;
+    width: 100%;
+    scale: 0 1;
+    transform-origin: left;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background: var(--color_glow_green);
+    animation: scroll-watching linear;
+    animation-timeline: scroll();
+}
+@keyframes scroll-watching {
+    to {scale: 1 1;}
+}
 
 
 /* ----------------------------- */
@@ -70,9 +86,10 @@ header {
     justify-content: center;
     align-content: center;
     position: fixed;
-    top: 0;
-    width: 100vw;
+    top: 8px;
+    width: calc(100vw - 1rem);
     min-width: 300px;
+    margin: 0.5rem;
     z-index: 10;
 }
 header .codepilot-logo {
@@ -109,7 +126,7 @@ header .social_media .social_media_items img {
 nav {
     grid-area: NAV;
     position: sticky;
-    top: 150px;
+    top: 158px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -163,7 +180,6 @@ nav .menu {
     top: 80px;
     translate: -120%;
     list-style-type: none;
-/*     padding: 3px; */
     transition: 0.8s;
     background: transparent;
     padding-top: 0.5rem;
@@ -197,9 +213,15 @@ main section {
     padding: 0.8rem;
     overflow: clip;
 }
+main section h1 {
+    font-size: 1.6rem;
+}
 main section h2 {
     font-size: 1.3rem;
     color: var(--color_glow_green);
+    margin: 2rem;
+    text-transform: uppercase;
+    text-align: center;
 }
 main section h3 {
     font-size: 1.1rem;
@@ -210,12 +232,6 @@ main section h3 {
 /* ----------------------------- */
 .home {
     height: 100vh;
-}
-.home h1 {
-    font-size: 1.6rem;
-}
-.home h2 {
-    margin-bottom: 2rem;
 }
 .home a {
     position: relative;
@@ -229,7 +245,6 @@ main section h3 {
 /* Az ABOUT elemeinek beállítása */
 /* ----------------------------- */
 .about {
-    /* height: 150vh; */
     gap: 0.8rem;
 }
 .about p {
@@ -254,7 +269,6 @@ main section h3 {
 /* A SKILLS elemeinek beállítása */
 /* ----------------------------- */
 .skill {
-    /* height: 110vh; */
     gap: 1.1rem;
 }
 .skill h3 {
@@ -274,7 +288,6 @@ main section h3 {
 /* A CONTACT elemeinek beállítása   */
 /* -------------------------------- */
 .contact {
-    /* height: 110vh; */
     gap: 1.1rem;
     margin-bottom: 2rem;
 }
@@ -286,8 +299,7 @@ main section h3 {
     width: clamp(270px, 45vw, 800px);
     text-align: center;
 }
-form .field input.form-item,
-form .field textarea.form-item {
+form .field .form-item {
     width: 100%;
     padding: 0.5rem;
     background: transparent;
@@ -298,8 +310,26 @@ form .field textarea.form-item {
     font-size: 0.8rem;
     margin-top: 11px;
 }
+form .field .form-item.error,
+form .field .form-item.blank {
+    border: 2px solid var(--color_active_red);
+    box-shadow: 0 0 8px 2px var(--color_active_red);
+}
 form .field .form-item::placeholder {
     color: var(--color_font);
+}
+form .field .blank-txt,
+form .field .error-txt {
+    display: none;
+    font-size: 0.8rem;
+    color: var(--color_active_red);
+    text-align: left;
+    margin-top: 3px;
+    margin-bottom: 8px;
+}
+form .field.error .error-txt,
+form .field.blank .blank-txt {
+    display: block;
 }
 form .textarea-field .blank-txt {
     margin-top: -1px;
@@ -332,16 +362,17 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     gap: 0.1rem 2rem;
-    width: 100vw;
+    width: calc(100vw - 1rem);
     position: fixed;
     bottom: 0;
+    margin: 0.5rem;
 }
 footer div p {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     padding: 0.1rem 0.5rem;
 }
 footer div p a {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: var(--color_glow_green);
 }
 
@@ -355,21 +386,22 @@ footer div p a {
         "LOGO SOCIAL";
     }
     nav {
-        top: 80px;
+        top: 103px;
     }
 
-    .home h1 {
+/*     .home h1 {
         font-size: 2rem;
     }
     .home h2 {
         font-size: 1.7rem;
-    }
+    } */
 }
 @media screen and (min-width: 992px) {
     body {
         display: grid;
         grid-template-columns: 340px auto;
         grid-template-areas:
+        "SCROLLER SCROLLER"
         "HEADER MAIN"
         "NAV MAIN"
         "FOOTER MAIN";
@@ -379,14 +411,13 @@ footer div p a {
         "LOGO"
         "SOCIAL";
         width: 320px;
-        margin: 0.5rem;
     }
     header .social_media {
         padding: 0.5rem 2rem;
     }
     nav {
         position: fixed;
-        top: 150px;
+        top: 158px;
         width: 320px;
         height: calc(100vh - 250px);
         padding: 0;
@@ -405,11 +436,16 @@ footer div p a {
     main section {
         width: calc(100vw - 360px);
     }
+    main section h1 {
+        font-size: 2.5rem;
+    }
+    main section h2 {
+        font-size: 1.8rem;
+    }
     .portfolio .container {
         flex-direction: row;
     }
     footer {
         width: 320px;
-        margin: 0.5rem;
     }
 }
