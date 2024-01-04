@@ -11,6 +11,7 @@
     --color_active_red: rgba(255, 80, 80, 0.8);
     --color_white: rgba(255, 255, 255);
     --color_white_transparent: rgba(255, 255, 255, 0.5);
+    --color_transparent: rgba(255, 255, 255, 0);
 }
 
 
@@ -218,20 +219,32 @@ main section h1 {
 }
 main section h2 {
     font-size: 1.3rem;
-    color: var(--color_glow_green);
+    color: var(--color_glow_green_faded);
     margin: 2rem;
     text-transform: uppercase;
     text-align: center;
+    background-image: linear-gradient(90deg, var(--color_glow_green), var(--color_glow_green));
+    background-clip: text;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    animation: scroll-reveal linear forwards;
+    animation-timeline: view();
+    animation-range-start: 20vh;
+    animation-range-end: 80vh;
+}
+@keyframes scroll-reveal {
+    to { background-size: 100% 100%;}
 }
 main section h3 {
     font-size: 1.1rem;
 }
 
+
 /* ----------------------------- */
 /* A HOME elemeinek beállítása   */
 /* ----------------------------- */
 .home {
-    height: 100vh;
+    height: 160vh;
 }
 .home a {
     position: relative;
@@ -247,10 +260,20 @@ main section h3 {
 .about {
     gap: 0.8rem;
 }
-.about p {
+.about h3 span,
+.about p span {
+    display: inline-block;
     font-size: 0.8rem;
-    width: 70vw;
-    padding: 0 2rem;
+    width: clamp(270px, 55vw, 700px);
+    color: var(--color_transparent);
+    background-image: linear-gradient(90deg, var(--color_font), var(--color_font));
+    background-clip: text;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    animation: scroll-reveal linear forwards;
+    animation-timeline: view();
+    animation-range-start: 10vh;
+    animation-range-end: 60vh;
 }
 .about p a {
     color: var(--color_glow_green);
@@ -262,6 +285,14 @@ main section h3 {
 .about .profil img {
     width: clamp(270px, 55vw, 700px);
     object-fit: cover;
+    animation: fade-in linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 80vh;
+}
+@keyframes fade-in {
+    from {scale: 0.8 1; opacity: 0;}
+    to {scale: 1 1; opacity: 1;}
 }
 
 
@@ -388,13 +419,6 @@ footer div p a {
     nav {
         top: 103px;
     }
-
-/*     .home h1 {
-        font-size: 2rem;
-    }
-    .home h2 {
-        font-size: 1.7rem;
-    } */
 }
 @media screen and (min-width: 992px) {
     body {
