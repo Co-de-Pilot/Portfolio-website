@@ -1,7 +1,7 @@
 .slideshow {
     position: relative;
     width: clamp(270px, 55vw, 600px);
-    height: clamp(210px, 50vw, 450px);
+    height: clamp(210px, 50vh, 450px);
     transform-style: preserve-3d;
     perspective: 1000px;
 }
@@ -36,15 +36,15 @@
 }
 .slideshow .slide h2 {
     position: relative;
-    top: -10%;
+    top: -30%;
     left: 100px;
     width: 200%;
     padding: 0.3rem 1.1rem;
     font-size: 2.2rem;
     font-weight: 800;
     border-radius: 11px;
-    color: var(--color_font);
-    text-shadow: 0 0 3px var(--color_white), 0 0 8px var(--color_white);
+    color: var(--color-font);
+    text-shadow: 0 0 3px var(--color-white), 0 0 8px var(--color-white);
     transform: scale(-1, 1) translateY(100px) translateZ(50px);
     rotate: y 180deg;
     transform-style: preserve-3d;
@@ -63,7 +63,7 @@
 .slideshow .slide span {
     display: block;
     position: relative;
-    top: 80%;
+/*     top: 80%; */
     left: -100px;
     padding: 0.1rem;
     font-size: 0.8rem;
