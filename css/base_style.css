@@ -48,8 +48,6 @@ textarea, input {
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
     color: var(--color-font);
-}
-html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
 }
@@ -97,7 +95,7 @@ header .codepilot-logo {
     grid-area: LOGO;
     padding: 0.5rem 2rem;
 }
-header .social_media {
+header .social-media {
     grid-area: SOCIAL;
     display: flex;
     justify-content: center;
@@ -106,16 +104,16 @@ header .social_media {
     padding: 0.5rem 1rem;
     gap: 1rem;
 }
-header .social_media .social_media_items {
+header .social-media .social-media-items {
     height: 1.8rem;
     border-radius: 5px;
     transition: all 0.5s linear;
 }
-header .social_media .social_media_items:hover {
+header .social-media .social-media-items:hover {
     background-color: var(--color-green-glow);
     box-shadow: 0 0 5px 5px var(--color-green-glow);
 }
-header .social_media .social_media_items img {
+header .social-media .social-media-items img {
     object-fit: cover;
     height: 1.8rem;
 }
@@ -451,7 +449,7 @@ footer div p a {
         "SOCIAL";
         width: 320px;
     }
-    header .social_media {
+    header .social-media {
         padding: 0.5rem 2rem;
     }
     nav {

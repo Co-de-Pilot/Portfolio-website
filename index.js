@@ -1,4 +1,4 @@
-/*MENU TOGGLE vezérlése*/
+/* MENU TOGGLE vezérlése */
 const menuToggle = document.querySelector('nav .toggle');
 const menuList = document.querySelector('nav .menu');
 
@@ -12,6 +12,29 @@ menuToggle.addEventListener('click', () => {
         menuList.classList.add("menu-active");
     }
 })
+
+
+/* MENU ACTIVE LINK vezérlése */
+const sections = document.querySelectorAll('section');
+const menuitems = document.querySelectorAll('nav .menu li a');
+
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if(top >= offset && top < offset + height) {
+            menuitems.forEach(links => {
+                links.classList.remove('active');
+                document.querySelector('nav .menu li a[href*=' + id + ']').classList.add('active');
+            });
+        };
+    });
+};
+
+
 
 
 /* CONTACT FORM vezérlése */

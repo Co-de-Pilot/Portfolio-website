@@ -1,4 +1,4 @@
-.letter_spacing_anim {
+.letter-spacing-anim {
     position: relative;
     display: block;
     text-decoration: none;
@@ -9,13 +9,13 @@
     padding: 0.3rem 1.1rem;
     transition: all 0.5s;
 }
-.letter_spacing_anim:hover,
-.letter_spacing_anim:active {
+.letter-spacing-anim:hover,
+.letter-spacing-anim.active {
     color: var(--color-green-faded);
     text-shadow: 0 0 3px var(--color-green-faded), 0 0 8px var(--color-green-faded);
     transform: translateY(-20px);
 }
-.letter_spacing_anim::before {
+.letter-spacing-anim::before {
     content: attr(data-text);
     position: absolute;
     bottom: -10px;
@@ -31,17 +31,17 @@
     opacity: 0;
     transition: 0.5s;
 }
-.letter_spacing_anim:hover::before,
-.letter_spacing_anim:active::before {
+.letter-spacing-anim:hover::before,
+.letter-spacing-anim.active::before {
     letter-spacing: 0.4rem;
     opacity: 1;
 }
 
 @media screen and (min-width: 992px) {
-    .letter_spacing_anim {
+    .letter-spacing-anim {
         font-size: 1.8rem;
     }
-    .letter_spacing_anim::before {
+    .letter-spacing-anim::before {
         font-size: 1.1rem;
     }
 }
