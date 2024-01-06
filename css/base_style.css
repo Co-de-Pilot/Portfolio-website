@@ -12,6 +12,7 @@
     --color-white: rgba(255, 255, 255);
     --color-white-transparent: rgba(255, 255, 255, 0.5);
     --color-transparent: rgba(255, 255, 255, 0);
+    --color-background: rgba(80, 0, 0, 0.05);
 }
 
 
@@ -38,8 +39,10 @@ textarea, input {
 .base-element-design {
     backdrop-filter: blur(3px);
     border-radius: 5px;
+    background: var(--color-background);
     box-shadow: 0 0 8px 2px var(--color-font);
 }
+
 
 /* ----------------------------- */
 /* A HTML és alap beállítások    */
@@ -143,7 +146,7 @@ nav .toggle {
     position: relative;
     height: 50px;
     width: 50px;
-    background: transparent;
+/*     background: transparent; */
     transition: all 0.8s linear;
     cursor: pointer;
     z-index: 10;
@@ -180,7 +183,7 @@ nav .menu {
     translate: -120%;
     list-style-type: none;
     transition: 0.8s;
-    background: transparent;
+/*     background: transparent; */
     padding-top: 0.5rem;
 }
 nav .menu.menu-active {

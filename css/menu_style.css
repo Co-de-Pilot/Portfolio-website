@@ -9,11 +9,10 @@
     padding: 0.3rem 1.1rem;
     transition: all 0.5s;
 }
-.letter-spacing-anim:hover,
 .letter-spacing-anim.active {
     color: var(--color-green-faded);
     text-shadow: 0 0 3px var(--color-green-faded), 0 0 8px var(--color-green-faded);
-    transform: translateY(-20px);
+    transform: translateY(-15px);
 }
 .letter-spacing-anim::before {
     content: attr(data-text);
@@ -31,7 +30,6 @@
     opacity: 0;
     transition: 0.5s;
 }
-.letter-spacing-anim:hover::before,
 .letter-spacing-anim.active::before {
     letter-spacing: 0.4rem;
     opacity: 1;
@@ -43,5 +41,16 @@
     }
     .letter-spacing-anim::before {
         font-size: 1.1rem;
+    }
+}
+@media (hover) {
+    .letter-spacing-anim:hover {
+        color: var(--color-green-faded);
+        text-shadow: 0 0 3px var(--color-green-faded), 0 0 8px var(--color-green-faded);
+        transform: translateY(-15px);
+    }
+    .letter-spacing-anim:hover::before {
+        letter-spacing: 0.4rem;
+        opacity: 1;
     }
 }
