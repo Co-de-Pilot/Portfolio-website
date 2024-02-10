@@ -14,23 +14,39 @@
     <span class="scroll-watcher"></span>
     <header class="base-element-design">
         <div class="codepilot-logo">
-            <h2 data-text="CO[DE]PILOT">CO[DE]PILOT</h2>
+            <a href="http://codepilot.fejlessz.hu/" target="_blank">
+                <h2 data-text="CO[DE]PILOT">CO[DE]PILOT</h2>
+            </a>
         </div>
         <div class="social-media">
             <div class="social-media-items">
                 <a href="https://www.facebook.com/jozsef.nogradi.9/" target="_blank">
-                    <img src="https://img.icons8.com/ios/50/800000/facebook-new.png" alt="Facebook-site"/>
+                    <img src="https://img.icons8.com/ios/30/587676/facebook-new.png" alt="Facebook-site"/>
                 </a>
             </div>
             <div class="social-media-items">
                 <a href="https://github.com/Co-de-Pilot" target="_blank">
-                    <img src="https://img.icons8.com/external-tal-revivo-light-tal-revivo/48/800000/external-github-community-for-software-building-and-testing-online-logo-light-tal-revivo.png" alt="GitHub-site"/>
+                    <img src="https://img.icons8.com/external-tal-revivo-light-tal-revivo/30/587676/external-github-community-for-software-building-and-testing-online-logo-light-tal-revivo.png" alt="GitHub-site"/>
                 </a>
             </div>
             <div class="social-media-items">
                 <a href="https://www.linkedin.com/in/jozsefnogradi/" target="_blank">
-                    <img src="https://img.icons8.com/ios/50/800000/linkedin.png"  alt="LinkedIn-site"/>
+                    <img src="https://img.icons8.com/ios/30/587676/linkedin.png"  alt="LinkedIn-site"/>
                 </a>
+            </div>
+        </div>
+        <div class="mode-selection">
+            <div class="mode-items lang-hun">
+                <img src="https://img.icons8.com/office/26/hungary.png" alt="Hungarian-language"/>
+            </div>
+            <div class="mode-items lang-eng">
+                <img src="https://img.icons8.com/color/30/great-britain.png" alt="english-language"/>
+            </div>
+            <div class="mode-items light-mode">
+                <img src="https://img.icons8.com/ios/30/587676/sun--v1.png" alt="light-mode"/>
+            </div>
+            <div class="mode-items dark-mode">
+                <img src="https://img.icons8.com/ios/26/587676/moon-symbol.png" alt="dark-mode"/>
             </div>
         </div>
     </header>
@@ -42,109 +58,108 @@
             <li></li>
         </ul>
         <ul class="menu base-element-design">
-            <li><a class="letter-spacing-anim active" href="#home-ref" data-text="Home">Home</a></li>
-            <li><a class="letter-spacing-anim" href="#about-ref" data-text="About">About</a></li>
-            <li><a class="letter-spacing-anim" href="#skill-ref" data-text="Skills">Skills</a></li>
-            <li><a class="letter-spacing-anim" href="#portfolio-ref" data-text="Portfolio">Portfolio</a></li>
-            <li><a class="letter-spacing-anim" href="#contact-ref" data-text="Contact">Contact</a></li>
+            <li><a class="eng letter-spacing-anim menu-active" href="#home-ref" data-text="Home">Home</a></li>
+            <li><a class="hun lang-inactive letter-spacing-anim menu-active" href="#home-ref" data-text="Főoldal">Főoldal</a></li>
+            <li><a class="eng letter-spacing-anim" href="#about-ref" data-text="About">About</a></li>
+            <li><a class="hun lang-inactive letter-spacing-anim" href="#about-ref" data-text="Rólam">Rólam</a></li>
+            <li><a class="eng letter-spacing-anim" href="#skill-ref" data-text="Skills">Skills</a></li>
+            <li><a class="hun lang-inactive letter-spacing-anim" href="#skill-ref" data-text="Készségek">Készségek</a></li>
+            <li><a class="eng letter-spacing-anim" href="#portfolio-ref" data-text="Portfolio">Portfolio</a></li>
+            <li><a class="hun lang-inactive letter-spacing-anim" href="#portfolio-ref" data-text="Referenciák">Referenciák</a></li>
+            <li><a class="eng letter-spacing-anim" href="#contact-ref" data-text="Contact">Contact</a></li>
+            <li><a class="hun lang-inactive letter-spacing-anim" href="#contact-ref" data-text="Kapcsolat">Kapcsolat</a></li>
         </ul>
     </nav>
     <main>
         <section id="home-ref" class="home">
-            <h1>József Nógrádi</h1>
-            <h2>Frontend Developer</h2>
-            <a class="letter-spacing-anim" href="#contact-ref" data-text="Work with me">Work with me</a>
+            <h1 class="eng">József Nógrádi</h1>
+            <h1 class="hun lang-inactive">Nógrádi József</h1>
+            <h2 class="eng">Frontend Developer</h2>
+            <h2 class="hun lang-inactive">Frontend Fejlesztő</h2>
+            <a class="eng letter-spacing-anim" href="#contact-ref" data-text="Work with me">Work with me</a>
+            <a class="hun lang-inactive letter-spacing-anim" href="#contact-ref" data-text="Dolgozz velem">Dolgozz velem</a>
         </section>
         <section id="about-ref" class="about">
-            <h2>About me</h2>
-            <h3><span>Hello!</span></h3>
-            <p><span>My name is József.</span></p>
-            <p><span>I am an aspiring frontend web developer, who is committed to building awesome and up-to-date websites.</span></p>
-            <p><span>I fell in love with CSS animations watching the videos of
-                <a href="https://www.youtube.com/@KevinPowell" target="_blank">Kevin Powell</a> or
-                <a href="https://www.youtube.com/@codehal" target="_blank">Codehal</a>.</span></p>
-            <div class="profil">
-                <img src="./resources/nogi_profil.png" alt="Profil image">
-            </div>
+            <h2 class="eng">About me</h2>
+            <h2 class="hun lang-inactive">Rólam</h2>
+            <h3 class="eng"><span>Hello!</span></h3>
+            <h3 class="hun lang-inactive"><span>Szia!</span></h3>
+            <p class="eng"><span>My name is József.</span></p>
+            <p class="hun lang-inactive"><span>A nevem József.</span></p>
+            <p class="eng"><span>I am an aspiring frontend web developer, who is committed to building unique, awesome and up-to-date websites and applications.</span></p>
+            <p class="hun lang-inactive"><span>Elszánt frontend webfejlesztő vagyok, aki egyedi, kivételes és naprakész weboldalakat és alkalmazásokat készít.</span></p>
+            <div class="profil base-element-design"></div>
         </section>
         <section id="skill-ref" class="skill">
-            <h2>My skills</h2>
-            <h3>These are the technologies I already use:</h3>
+            <h2 class="eng">My skills</h2>
+            <h2 class="hun lang-inactive">Készségeim</h2>
+            <h3 class="eng">These are the technologies I already use:</h3>
+            <h3 class="hun lang-inactive">Íme az általam már használt technológiák:</h3>
             <div class="slideshow">
                 <div class="slide" style="--i:0;">
-                    <h2>HTML5
-                        <span>Semantic and non-semantic HTML-tags</span>
-                        <span>Responsive Design</span>
-                        <span>Developer tools</span>
-                    </h2>
-                    <img src="https://img.icons8.com/color/480/html-5--v1.png" alt="HTML5">
+                    <h2>HTML5</h2>
+                    <img class="base-element-design" src="https://img.icons8.com/color/480/html-5--v1.png" alt="HTML5">
                 </div>
                 <div class="slide" style="--i:1;">
-                    <h2>CSS3
-                        <span>Flexbox</span>
-                        <span>Grid</span>
-                        <span>Animations</span>
-                    </h2>
-                    <img src="https://img.icons8.com/color/480/css3.png" alt="CSS3">
+                    <h2>CSS3</h2>
+                    <img class="base-element-design" src="https://img.icons8.com/color/480/css3.png" alt="CSS3">
                 </div>
                 <div class="slide" style="--i:2;">
-                    <h2>Javascript
-                        <span>DOM</span>
-                        <span>Function</span>
-                        <span>Still learning...</span>
-                    </h2>
-                    <img src="https://img.icons8.com/color/480/javascript.png" alt="Javascript">
+                    <h2>Javascript</h2>
+                    <img class="base-element-design" src="https://img.icons8.com/color/480/javascript.png" alt="Javascript">
                 </div>
                 <div class="slide" style="--i:3;">
-                    <h2>Java
-                        <span>Java Core</span>
-                        <span>Stream API</span>
-                        <span>Serialization</span>
-                    </h2>
-                    <img src="https://img.icons8.com/color/480/java-coffee-cup-logo--v1.png" alt="Java">
+                    <h2>Java</h2>
+                    <img class="base-element-design" src="https://img.icons8.com/color/480/java-coffee-cup-logo--v1.png" alt="Java">
                 </div>
                 <div class="slide" style="--i:4;">
-                    <h2>PostgreSQL
-                        <span>Still learning...</span>
-                    </h2>
-                    <img src="https://img.icons8.com/color/480/postgreesql.png" alt="PostgreSQL">
+                    <h2>PostgreSQL</h2>
+                    <img class="base-element-design" src="https://img.icons8.com/color/480/postgreesql.png" alt="PostgreSQL">
                 </div>
             </div>
         </section>
 
         <section id="portfolio-ref" class="portfolio">
-            <h2>My portfolio</h2>
+            <h2 class="eng">My portfolio</h2>
+            <h2 class="hun lang-inactive">Referenciáim</h2>
             <div class="container">
-                <div class="box">
+                <div class="box base-element-design">
                     <span></span>
                     <div class="content">
                         <h2>LHSZ.HU</h2>
-                        <p>The official website of Aeroclub Szentes. Still constructing...</p>
+                        <p class="eng">The official website of Aeroclub Szentes.</p>
+                        <p class="hun lang-inactive">A Szentesi Repülőklub hivatalos weboldala.</p>
                         <div class="used-tech">
                             <img src="https://img.icons8.com/color/24/html-5--v1.png" alt="HTML5">
                             <img src="https://img.icons8.com/color/24/css3.png" alt="CSS3">
                             <img src="https://img.icons8.com/color/24/javascript.png" alt="Javascript">
                         </div>
-                        <a href="https://github.com/Co-de-Pilot/LHSZ.HU">Watch on GitHub</a>
+                        <a class="eng" href="https://github.com/Co-de-Pilot/LHSZ.HU">Watch on GitHub</a>
+                        <a class="hun lang-inactive" href="https://github.com/Co-de-Pilot/LHSZ.HU">Nézd meg GitHub-on</a>
                     </div>
                 </div>
-                <div class="box">
+                <div class="box base-element-design">
                     <span></span>
                     <div class="content">
                         <h2>MDC Register</h2>
-                        <p>A desktop application for register Military Diplomatic Clearances of
+                        <p class="eng">A desktop application for register Military Diplomatic Clearances of
                             non-NATO state aircrafts crossing hungarian airspace.</p>
+                        <p class="hun lang-inactive">Asztali alkalmazás a magyar légteret érintő nem NATO országok
+                            állami repülőgépei Katonai Diplomáciai Engedélyeinek nyilvántartására.</p>
                         <div class="used-tech">
                             <img src="https://img.icons8.com/color/24/java-coffee-cup-logo--v1.png" alt="Java">
                         </div>
-                        <a href="https://github.com/Co-de-Pilot/MDC-Register/tree/master">Watch on GitHub</a>
+                        <a class="eng" href="https://github.com/Co-de-Pilot/MDC-Register/tree/master">Watch on GitHub</a>
+                        <a class="hun lang-inactive" href="https://github.com/Co-de-Pilot/MDC-Register/tree/master">Nézd meg GitHub-on</a>
                     </div>
                 </div>
             </div>
         </section>
         <section id="contact-ref" class="contact">
-            <h2>Contact</h2>
-            <h3>Feel free to send me a message</h3>
+            <h2 class="eng">Contact</h2>
+            <h2 class="hun lang-inactive">Kapcsolat</h2>
+            <h3 class="eng">Feel free to send me a message:</h3>
+            <h3 class="hun lang-inactive">Vedd fel velem a kapcsolatot:</h3>
             <form action="https://formsubmit.co/f494569fbfc22ab7906f8f7703c27bf2" method="POST" class="contact-form">
                 <input type="hidden" name="_captcha" value="true"/>
                 <input type="hidden" name="_subject" value="Új Üzenet a CO[DE]PILOT-nak!!!"/>
@@ -153,22 +168,33 @@
                 <div class="input-box">
                     <div class="input-field field">
                         <input type="text" placeholder="Full name" id="name"
-                            class="form-item" name="Full&nbsp;name" autocomplete="off"/>
-                        <div class="blank-txt">Please fill in the full name field!</div>
+                            class="eng form-item" name="Full&nbsp;name" autocomplete="off"/>
+                        <input type="text" placeholder="Teljes Név" id="name"
+                            class="hun lang-inactive form-item" name="Full&nbsp;name" autocomplete="off"/>
+                        <div class="eng blank-txt">Please fill in the full name field!</div>
+                        <div class="hun lang-inactive blank-txt">Kérlek add meg a teljes neved!</div>
                     </div>
                     <div class="input-field field">
                         <input type="email" placeholder="Email-adress" id="email"
-                        class="form-item" name="Email-adress" autocomplete="off"/>
-                        <div class="blank-txt">Please fill in the email field!</div>
-                        <div class="error-txt">Please enter a valid email address!</div>
+                            class="eng form-item" name="Email-adress" autocomplete="off"/>
+                        <input type="email" placeholder="Email-cím" id="email"
+                            class="hun lang-inactive form-item" name="Email-adress" autocomplete="off"/>
+                        <div class="eng blank-txt">Please fill in the email field!</div>
+                        <div class="hun lang-inactive blank-txt">Kérlek, add meg az email-címed!</div>
+                        <div class="eng error-txt">Please enter a valid email address!</div>
+                        <div class="hun lang-inactive error-txt">Kérlek, érvényes email-címet adj meg!</div>
                     </div>
                 </div>
                 <div class="textarea-field field">
-                    <textarea class="form-item" name="Message&nbsp;text" id="message" cols="30" rows="10"
-                    autocomplete="off" placeholder="Please enter your message here"></textarea>
-                    <div class="blank-txt">Please fill in the message field!</div>
+                    <textarea class="eng form-item" name="Message&nbsp;text" id="message" cols="30" rows="10"
+                        autocomplete="off" placeholder="Please enter your message here"></textarea>
+                    <textarea class="hun lang-inactive form-item" name="Message&nbsp;text" id="message" cols="30" rows="10"
+                        autocomplete="off" placeholder="Kérlek, ide írd az üzeneted"></textarea>
+                    <div class="eng blank-txt">Please fill in the message field!</div>
+                    <div class="hun lang-inactive blank-txt">Kérlek, írd meg az üzeneted!</div>
                 </div>
-                <a class="submit-button letter-spacing-anim" href="#" data-text="Send Message">Send Message</a>
+                <a class="eng submit-button letter-spacing-anim" href="#" data-text="Send Message">Send Message</a>
+                <a class="hun lang-inactive submit-button letter-spacing-anim" href="#" data-text="Üzenet küldése">Üzenet küldése</a>
             </form>
             
         </section>

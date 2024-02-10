@@ -6,8 +6,8 @@
     font-size: 1.3rem;
     color: var(--color-font);
     font-weight: 700;
-    padding: 0.3rem 1.1rem;
-    transition: all 0.5s;
+    padding: 0.3rem 2rem 0.3rem 1rem;
+    transition: all 0.4s;
 }
 .letter-spacing-anim.active {
     color: var(--color-green-faded);
@@ -28,7 +28,7 @@
     text-shadow: 0 0 3px var(--color-green-glow), 0 0 8px var(--color-green-glow), 0 0 18px var(--color-green-glow);
     letter-spacing: 100px;
     opacity: 0;
-    transition: 0.5s;
+    transition: 0.4s ease-out;
 }
 .letter-spacing-anim.active::before {
     letter-spacing: 0.4rem;

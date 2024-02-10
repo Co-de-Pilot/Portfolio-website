@@ -1,16 +1,48 @@
+/* Nyelv kiválasztás vezérlése */
+const hunButton = document.querySelector('.lang-hun');
+const hunItems = document.querySelectorAll('.hun');
+const engButton = document.querySelector('.lang-eng');
+const engItems = document.querySelectorAll('.eng');
+
+hunButton.addEventListener('click', () => {
+    hunItems.forEach(hunItem => {
+        hunItem.classList.remove('lang-inactive');
+    });
+    engItems.forEach(engItem => {
+        engItem.classList.add('lang-inactive');
+    });
+})
+
+engButton.addEventListener('click', () => {
+    engItems.forEach(engItem => {
+        engItem.classList.remove('lang-inactive');
+    });
+    hunItems.forEach(hunItem => {
+        hunItem.classList.add('lang-inactive');
+    });
+})
+
+
+/* LIGHT/DARK MODE vezérlése */
+const lightModeButton = document.querySelector('.light-mode');
+const darkModeButton = document.querySelector('.dark-mode');
+
+lightModeButton.addEventListener('click', () => {
+    document.body.classList.remove("dark-bg");
+})
+
+darkModeButton.addEventListener('click', () => {
+    document.body.classList.add("dark-bg");
+})
+
+
 /* MENU TOGGLE vezérlése */
 const menuToggle = document.querySelector('nav .toggle');
 const menuList = document.querySelector('nav .menu');
 
 menuToggle.addEventListener('click', () => {
-    const menuActiveItems = document.querySelectorAll('.menu-active');
-    menuActiveItems.forEach(menuActiveItem => {
-        menuActiveItem.classList.remove("menu-active");
-    })
-    if(menuActiveItems.length == 0) {
-        menuToggle.classList.add("menu-active");
-        menuList.classList.add("menu-active");
-    }
+    menuToggle.classList.toggle("menu-active");
+    menuList.classList.toggle("menu-active");
 })
 
 
