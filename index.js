@@ -66,32 +66,36 @@ window.onscroll = () => {
     });
 };
 
-
+/* id="name" */
 
 
 /* CONTACT FORM vezérlése */
-const submitButton = document.querySelector('.submit-button');
-const email = document.querySelector('.field #email');
 const form = document.querySelector('.contact-form');
-const items = document.querySelectorAll('.form-item');
+const submitButtons = document.querySelectorAll('.submit-button');
+let items;
 
-submitButton.addEventListener('click', (event) => {
-    event.preventDefault();
-    checkInputs();
-    let correctFormInput = true;
-    for (const item of items) {
-        if (item.classList.contains("blank") || item.classList.contains("error")) {
-            correctFormInput = false;
+for(const submitButton of submitButtons) {
+    submitButton.addEventListener('click', (event) => {
+        items = document.querySelectorAll('.form-item:not(.lang-inactive)');
+        console.log(items);
+        event.preventDefault();
+        checkInputs();
+        let correctFormInput = true;
+        for (const item of items) {
+            if (item.classList.contains("blank") || item.classList.contains("error")) {
+                correctFormInput = false;
+            }
         }
-    }
-    if (correctFormInput) {
-        form.submit();
-        form.reset();
-    }
-})
+        if (correctFormInput) {
+            form.submit();
+            form.reset();
+        }
+    })
+}
 
 function checkInputs() {
-    
+    console.log(items);
+
     for (const item of items) {
         if (item.value == "") {
             item.classList.add("blank");
@@ -100,11 +104,11 @@ function checkInputs() {
         if (items[1].value != "") {
             checkEmail();
         }
-
+        
         items[1].addEventListener('keyup', (event) => {
             checkEmail();
         });
-
+        
         
         item.addEventListener('keyup', (event) => {            
             if (item.value != "") {
@@ -120,6 +124,7 @@ function checkInputs() {
 
 function checkEmail() {
     const emailRegex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,3})(\.[a-z]{2,3})?$/;
+    let email = document.querySelector('.email:not(.lang-inactive)');
     
     if (!email.value.match(emailRegex)) {
         email.classList.add("error");
