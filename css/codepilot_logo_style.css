@@ -1,56 +1,92 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
-
+/* ----------------------------- */
+/* A változók beállítása         */
+/* ----------------------------- */
 :root {
-  --color-glow-green: rgba(0, 197, 180, 0.8);
-  --color-glow-green-faded: rgba(0, 197, 180, 0.11);
+  --bounce-timing-function: linear(
+    0 0%,
+    0 2.27%,
+    0.02 4.53%,
+    0.04 6.8%,
+    0.06 9.07%,
+    0.1 11.33%,
+    0.14 13.6%,
+    0.25 18.15%,
+    0.39 22.7%,
+    0.56 27.25%,
+    0.77 31.8%,
+    1 36.35%,
+    0.89 40.9%,
+    0.85 43.18%,
+    0.81 45.45%,
+    0.79 47.72%,
+    0.77 50%,
+    0.75 52.27%,
+    0.75 54.55%,
+    0.75 56.82%,
+    0.77 59.1%,
+    0.79 61.38%,
+    0.81 63.65%,
+    0.85 65.93%,
+    0.89 68.2%,
+    1 72.7%,
+    0.97 74.98%,
+    0.95 77.25%,
+    0.94 79.53%,
+    0.94 81.8%,
+    0.94 84.08%,
+    0.95 86.35%,
+    0.97 88.63%,
+    1 90.9%,
+    0.99 93.18%,
+    0.98 95.45%,
+    0.99 97.73%,
+    1 100%
+  );
+  --elastic-timing-function: linear(
+    0 0%,
+    0.22 2.1%,
+    0.86 6.5%,
+    1.11 8.6%,
+    1.3 10.7%,
+    1.35 11.8%,
+    1.37 12.9%,
+    1.37 13.7%,
+    1.36 14.5%,
+    1.32 16.2%,
+    1.03 21.8%,
+    0.94 24%,
+    0.89 25.9%,
+    0.88 26.85%,
+    0.87 27.8%,
+    0.87 29.25%,
+    0.88 30.7%,
+    0.91 32.4%,
+    0.98 36.4%,
+    1.01 38.3%,
+    1.04 40.5%,
+    1.05 42.7%,
+    1.05 44.1%,
+    1.04 45.7%,
+    1 53.3%,
+    0.99 55.4%,
+    0.98 57.5%,
+    0.99 60.7%,
+    1 68.1%,
+    1.01 72.2%,
+    1 86.7%,
+    1 100%
+  );
 }
+
+/* ---------------------------------- */
+/* A logó áttetszőségének animálása   */
+/* ---------------------------------- */
 .codepilot-logo .logo,
 .home > .logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: inversFlashing 2s
-    linear(
-      0 0%,
-      0 2.27%,
-      0.02 4.53%,
-      0.04 6.8%,
-      0.06 9.07%,
-      0.1 11.33%,
-      0.14 13.6%,
-      0.25 18.15%,
-      0.39 22.7%,
-      0.56 27.25%,
-      0.77 31.8%,
-      1 36.35%,
-      0.89 40.9%,
-      0.85 43.18%,
-      0.81 45.45%,
-      0.79 47.72%,
-      0.77 50%,
-      0.75 52.27%,
-      0.75 54.55%,
-      0.75 56.82%,
-      0.77 59.1%,
-      0.79 61.38%,
-      0.81 63.65%,
-      0.85 65.93%,
-      0.89 68.2%,
-      1 72.7%,
-      0.97 74.98%,
-      0.95 77.25%,
-      0.94 79.53%,
-      0.94 81.8%,
-      0.94 84.08%,
-      0.95 86.35%,
-      0.97 88.63%,
-      1 90.9%,
-      0.99 93.18%,
-      0.98 95.45%,
-      0.99 97.73%,
-      1 100%
-    )
-    3s forwards;
+  animation: inversFlashing 2s var(--bounce-timing-function) 3s forwards;
 }
 @keyframes inversFlashing {
   0%,
@@ -61,6 +97,10 @@
     opacity: 0.3;
   }
 }
+
+/* ---------------------------------- */
+/* A logó háttérfelirat animálása     */
+/* ---------------------------------- */
 .codepilot-logo .logo::before,
 .home > .logo::before {
   content: "CO[DE]PILOT";
@@ -70,45 +110,10 @@
   text-shadow: 0 0 8px var(--color-red);
   font-size: 30px;
   opacity: 0;
-  animation: flashing 2s
-    linear(
-      0 0%,
-      0.22 2.1%,
-      0.86 6.5%,
-      1.11 8.6%,
-      1.3 10.7%,
-      1.35 11.8%,
-      1.37 12.9%,
-      1.37 13.7%,
-      1.36 14.5%,
-      1.32 16.2%,
-      1.03 21.8%,
-      0.94 24%,
-      0.89 25.9%,
-      0.88 26.85%,
-      0.87 27.8%,
-      0.87 29.25%,
-      0.88 30.7%,
-      0.91 32.4%,
-      0.98 36.4%,
-      1.01 38.3%,
-      1.04 40.5%,
-      1.05 42.7%,
-      1.05 44.1%,
-      1.04 45.7%,
-      1 53.3%,
-      0.99 55.4%,
-      0.98 57.5%,
-      0.99 60.7%,
-      1 68.1%,
-      1.01 72.2%,
-      1 86.7%,
-      1 100%
-    )
-    3s forwards;
+  animation: flashing 2s var(--bounce-timing-function) 3s forwards;
 }
 .home > .logo::before {
-  font-size: 11vw;
+  font-size: 9vw;
 }
 @keyframes flashing {
   0%,
@@ -119,46 +124,15 @@
     opacity: 1;
   }
 }
+
+/* ---------------------------------- */
+/* A logó SVG ikonok animálása        */
+/* ---------------------------------- */
 .codepilot-logo .logo > svg,
 .home > .logo > svg {
-  color: var(--color-glow-green-faded);
-  filter: drop-shadow(0 0 8px var(--color-glow-green)) blur(0.8px);
-  animation: lightenIcons 2s
-    linear(
-      0 0%,
-      0.22 2.1%,
-      0.86 6.5%,
-      1.11 8.6%,
-      1.3 10.7%,
-      1.35 11.8%,
-      1.37 12.9%,
-      1.37 13.7%,
-      1.36 14.5%,
-      1.32 16.2%,
-      1.03 21.8%,
-      0.94 24%,
-      0.89 25.9%,
-      0.88 26.85%,
-      0.87 27.8%,
-      0.87 29.25%,
-      0.88 30.7%,
-      0.91 32.4%,
-      0.98 36.4%,
-      1.01 38.3%,
-      1.04 40.5%,
-      1.05 42.7%,
-      1.05 44.1%,
-      1.04 45.7%,
-      1 53.3%,
-      0.99 55.4%,
-      0.98 57.5%,
-      0.99 60.7%,
-      1 68.1%,
-      1.01 72.2%,
-      1 86.7%,
-      1 100%
-    )
-    0.5s forwards;
+  color: var(--color-green-more-faded);
+  filter: drop-shadow(0 0 8px var(--color-green-glow)) blur(0.8px);
+  animation: lightenIcons 2s var(--elastic-timing-function) 0.5s forwards;
 }
 .codepilot-logo .logo > svg:nth-of-type(2),
 .home > .logo > svg:nth-of-type(2) {
@@ -170,60 +144,23 @@
 }
 @keyframes lightenIcons {
   to {
-    color: var(--color-glow-green);
+    color: var(--color-green-glow);
   }
 }
+
+/* ---------------------------------- */
+/* A logó zárójelek(spanek) animálása */
+/* ---------------------------------- */
 .codepilot-logo .logo > span,
 .home > .logo > span {
   opacity: 0;
   font-size: 40px;
   font-weight: 800;
   color: transparent;
-  -webkit-text-stroke: 2px var(--color-glow-green);
-  text-shadow: 0 0 8px var(--color-glow-green);
+  -webkit-text-stroke: 2px var(--color-green-glow);
+  text-shadow: 0 0 8px var(--color-green-glow);
   filter: blur(0.8px);
-  animation: marginGame 0.8s
-    linear(
-      0 0%,
-      0 2.27%,
-      0.02 4.53%,
-      0.04 6.8%,
-      0.06 9.07%,
-      0.1 11.33%,
-      0.14 13.6%,
-      0.25 18.15%,
-      0.39 22.7%,
-      0.56 27.25%,
-      0.77 31.8%,
-      1 36.35%,
-      0.89 40.9%,
-      0.85 43.18%,
-      0.81 45.45%,
-      0.79 47.72%,
-      0.77 50%,
-      0.75 52.27%,
-      0.75 54.55%,
-      0.75 56.82%,
-      0.77 59.1%,
-      0.79 61.38%,
-      0.81 63.65%,
-      0.85 65.93%,
-      0.89 68.2%,
-      1 72.7%,
-      0.97 74.98%,
-      0.95 77.25%,
-      0.94 79.53%,
-      0.94 81.8%,
-      0.94 84.08%,
-      0.95 86.35%,
-      0.97 88.63%,
-      1 90.9%,
-      0.99 93.18%,
-      0.98 95.45%,
-      0.99 97.73%,
-      1 100%
-    )
-    2s forwards;
+  animation: marginGame 0.8s var(--bounce-timing-function) 2s forwards;
 }
 .home > .logo > span {
   font-size: 18vw;
@@ -238,17 +175,21 @@
     margin: 0;
   }
 }
+
+/* -------------------------------- */
+/* A Reszponzivitás beállítása      */
+/* -------------------------------- */
 @media screen and (min-width: 768px) {
   .home > .logo > svg {
-    width: 160px;
+    width: 140px;
   }
   .home > .logo > svg:nth-of-type(2) {
-    width: 200px;
+    width: 180px;
   }
   .home > .logo::before {
-    font-size: 110px;
+    font-size: 90px;
   }
   .home > .logo > span {
-    font-size: 150px;
+    font-size: 130px;
   }
 }

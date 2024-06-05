@@ -1,11 +1,13 @@
+/* ----------------------------- */
+/* Skill slideshow beállítása    */
+/* ----------------------------- */
 .slideshow {
-    position: relative;
-    width: clamp(270px, 55vw, 600px);
-    height: clamp(210px, 50vh, 450px);
-    transform-style: preserve-3d;
-    perspective: 1000px;
-}
-.slideshow .slide {
+  position: relative;
+  width: clamp(270px, 55vw, 600px);
+  height: clamp(210px, 50vh, 450px);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  & .slide {
     position: absolute;
     inset: 0;
     display: flex;
@@ -14,53 +16,81 @@
     transform: scale(-1, 1);
     rotate: y 90deg;
     transform-style: preserve-3d;
-    animation: animate 30s cubic-bezier(0, 0.48, 1, 0.52) infinite;
-    animation-delay: calc(var(--i) * 6s);
-}
-@keyframes animate {
-    0% {
-        rotate: y 90deg;
+    animation: slide-rotate 30s cubic-bezier(0, 0.48, 1, 0.52) infinite;
+    &:nth-of-type(2) {
+      animation-delay: 6s;
     }
-    20%, 100% {
-        rotate: y 270deg;        
+    &:nth-of-type(3) {
+      animation-delay: 12s;
     }
+    &:nth-of-type(4) {
+      animation-delay: 18s;
+    }
+    &:nth-of-type(5) {
+      animation-delay: 24s;
+    }
+    & img {
+      position: relative;
+      top: 0;
+      margin: 0 auto;
+      width: 100%;
+      height: auto;
+    }
+    & h2 {
+      position: absolute;
+      top: -30%;
+      width: 100%;
+      padding: 0.3rem 1.1rem;
+      font-size: 3.3rem;
+      font-weight: 800;
+      border-radius: 11px;
+      color: var(--color-font);
+      text-shadow: 0 0 3px var(--color-white), 0 0 8px var(--color-white);
+      transform: scale(-1, 1) translateY(100px) translateZ(50px);
+      rotate: y 180deg;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      animation: text-slide 30s linear infinite;
+      &.title-1 {
+        animation-delay: 6s;
+      }
+      &.title-2 {
+        animation-delay: 12s;
+      }
+      &.title-3 {
+        animation-delay: 18s;
+      }
+      &.title-4 {
+        animation-delay: 24s;
+      }
+    }
+  }
 }
-.slideshow .slide img {
-    position: relative;
-    top: 0;
-    margin: 0 auto;
-    width: 100%;
-    height: auto;
-}
-.slideshow .slide h2 {
-    position: absolute;
-    top: -30%;
-    width: 100%;
-    padding: 0.3rem 1.1rem;
-    font-size: 3.3rem;
-    font-weight: 800;
-    border-radius: 11px;
-    color: var(--color-font);
-    text-shadow: 0 0 3px var(--color-white), 0 0 8px var(--color-white);
-    transform: scale(-1, 1) translateY(100px) translateZ(50px);
-    rotate: y 180deg;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-    animation: text-slide 30s linear infinite;
-    animation-delay: calc(var(--i) * 6s);
+@keyframes slide-rotate {
+  0% {
+    rotate: y 90deg;
+  }
+  20%,
+  100% {
+    rotate: y 270deg;
+  }
 }
 @keyframes text-slide {
-    0% {
-        left: 50px;
-    }
-    20%, 100% {
-        left: -150px;
-    }
+  0% {
+    left: 50px;
+  }
+  20%,
+  100% {
+    left: -150px;
+  }
 }
 
+/* -------------------------------- */
+/* A Reszponzivitás beállítása      */
+/* -------------------------------- */
 @media screen and (min-width: 576px) {
-    .slideshow .slide img {
-        width: auto;
-        height: 100%;
-    }
+  .slideshow .slide img {
+    width: auto;
+    height: 100%;
+  }
 }

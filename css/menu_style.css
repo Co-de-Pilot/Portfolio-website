@@ -1,20 +1,17 @@
+/* -------------------------------- */
+/* A Menü animálása                 */
+/* -------------------------------- */
 .letter-spacing-anim {
-    position: relative;
-    display: block;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1.3rem;
-    color: var(--color-font);
-    font-weight: 700;
-    padding: 0.3rem 2rem 0.3rem 1rem;
-    transition: all 0.4s;
-}
-.letter-spacing-anim.active {
-    color: var(--color-green-faded);
-    text-shadow: 0 0 3px var(--color-green-faded), 0 0 8px var(--color-green-faded);
-    transform: translateY(-15px);
-}
-.letter-spacing-anim::before {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  color: var(--color-font);
+  font-weight: 700;
+  padding: 0.3rem 2rem 0.3rem 1rem;
+  transition: all 0.4s;
+  &::before {
     content: attr(data-text);
     position: absolute;
     bottom: -10px;
@@ -25,32 +22,44 @@
     padding: 0.3rem 0.8rem;
     overflow: hidden;
     color: var(--color-green-glow);
-    text-shadow: 0 0 3px var(--color-green-glow), 0 0 8px var(--color-green-glow), 0 0 18px var(--color-green-glow);
+    text-shadow: 0 0 3px var(--color-green-glow),
+      0 0 8px var(--color-green-glow), 0 0 18px var(--color-green-glow);
     letter-spacing: 100px;
     opacity: 0;
     transition: 0.4s ease-out;
-}
-.letter-spacing-anim.active::before {
-    letter-spacing: 0.4rem;
-    opacity: 1;
+  }
+  &.active {
+    color: var(--color-green-faded);
+    text-shadow: 0 0 3px var(--color-green-faded),
+      0 0 8px var(--color-green-faded);
+    transform: translateY(-15px);
+    &::before {
+      letter-spacing: 0.4rem;
+      opacity: 1;
+    }
+  }
 }
 
+/* -------------------------------- */
+/* A Reszponzivitás beállítása      */
+/* -------------------------------- */
 @media screen and (min-width: 992px) {
-    .letter-spacing-anim {
-        font-size: 1.8rem;
+  .letter-spacing-anim {
+    font-size: 1.8rem;
+    &::before {
+      font-size: 1.1rem;
     }
-    .letter-spacing-anim::before {
-        font-size: 1.1rem;
-    }
+  }
 }
 @media (hover) {
-    .letter-spacing-anim:hover {
-        color: var(--color-green-faded);
-        text-shadow: 0 0 3px var(--color-green-faded), 0 0 8px var(--color-green-faded);
-        transform: translateY(-15px);
+  .letter-spacing-anim:hover {
+    color: var(--color-green-faded);
+    text-shadow: 0 0 3px var(--color-green-faded),
+      0 0 8px var(--color-green-faded);
+    transform: translateY(-15px);
+    &::before {
+      letter-spacing: 0.4rem;
+      opacity: 1;
     }
-    .letter-spacing-anim:hover::before {
-        letter-spacing: 0.4rem;
-        opacity: 1;
-    }
+  }
 }
