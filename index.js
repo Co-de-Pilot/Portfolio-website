@@ -58,8 +58,8 @@ window.onscroll = () => {
       menuitems.forEach((links) => {
         links.classList.remove("active");
         document
-          .querySelector("nav .menu li a[href*=" + id + "]")
-          .classList.add("active");
+          .querySelectorAll("nav .menu li a[href*=" + id + "]")
+          .forEach((activelink) => activelink.classList.add("active"));
       });
     }
   });
